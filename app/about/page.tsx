@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import AboutContent from "../components/AboutContent";
+import AboutContent from "@/components/AboutContext";
 
 const AboutPage = () => {
     return <AboutContent />;
