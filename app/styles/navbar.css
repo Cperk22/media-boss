@@ -1,0 +1,52 @@
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar a {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #3b82f6;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 1rem 0;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
