@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Home from "@/components/home";
+import Home from "@/components/HomeContent";
 
 const HomePage = () => {
     return <Home />;
