@@ -1,6 +1,8 @@
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation';
 
 export default function MainPage() {
-    redirect("/home"); // Redirects '/' to '/home'
+    if (typeof window === 'undefined') {
+        redirect('/home');
+    }
     return null;
 }
