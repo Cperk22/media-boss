@@ -53,7 +53,7 @@ const HomeContent = () => {
 
             {/* About Section */}
             <motion.section id="about" className="py-32 bg-gray-900 text-center relative overflow-hidden"
-                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                initial="hidden" whileInView="visible" viewport={{ once: false }} variants={fadeInUp}>
                 <Image src="/about-background.png" alt="About Background" layout="fill" objectFit="cover" className="absolute inset-0 opacity-20" />
                 <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
                     <h2 className="text-6xl font-extrabold text-white">About Us</h2>
@@ -70,7 +70,7 @@ const HomeContent = () => {
 
             {/* Services Section */}
             <motion.section id="services" className="py-32 bg-gradient-to-b from-gray-900 via-black to-gray-800 text-center relative overflow-hidden"
-                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                initial="hidden" whileInView="visible" viewport={{ once: false }} variants={fadeInUp}>
                 <Image src="/services-background.png" alt="Services Background" layout="fill" objectFit="cover" className="absolute inset-0 opacity-15" />
                 <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
                     <h2 className="text-6xl font-extrabold text-white">Our Services</h2>
@@ -80,7 +80,7 @@ const HomeContent = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
                         {slides.map((service, index) => (
                             <motion.div key={index} className="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:scale-105"
-                                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                                initial="hidden" whileInView="visible" viewport={{ once: false }} variants={fadeInUp}>
                                 <Image src={service.image} alt={service.text} width={400} height={200} className="w-full h-52 object-cover rounded-lg mb-6" />
                                 <h3 className="text-3xl font-bold text-white mb-3">{service.text}</h3>
                             </motion.div>
@@ -96,7 +96,7 @@ const HomeContent = () => {
 
             {/* Contact Section */}
             <motion.section id="contact" className="py-32 bg-black text-center relative overflow-hidden"
-                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                initial="hidden" whileInView="visible" viewport={{ once: false }} variants={fadeInUp}>
                 <Image src="/contact-background.png" alt="Contact Background" layout="fill" objectFit="cover" className="absolute inset-0 opacity-10" />
                 <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
                     <h2 className="text-6xl font-extrabold text-white">Get in Touch</h2>
