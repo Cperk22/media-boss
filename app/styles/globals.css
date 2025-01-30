@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
-
-/* Global Styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Fonts */
+
 
 html {
   scroll-behavior: smooth;
@@ -11,76 +12,89 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0a0a0a;
+  background-color: #0A0A0A;
   color: white;
   line-height: 1.7;
 }
 
-/* Text Styling */
-.text-glow {
-  text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
-}
-
-.text-gradient {
-  background: linear-gradient(90deg, #ff7eb3, #ff758c);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Heading Styles */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-}
-
-h1 {
-  font-size: 4rem;
-  font-weight: 900;
-}
-
-h2 {
-  font-size: 3rem;
-  font-weight: 800;
-}
-
-h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-/* Buttons */
+/* Button Styles */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   padding: 14px 32px;
   font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  background: linear-gradient(90deg, #7B61FF, #A88BFF);
   color: white;
-  box-shadow: 0px 5px 15px rgba(255, 118, 150, 0.4);
+  box-shadow: 0px 5px 15px rgba(123, 97, 255, 0.4);
+  border: none;
+  cursor: pointer;
 }
 
 .btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 8px 20px rgba(255, 118, 150, 0.6);
+  transform: scale(1.1);
+  box-shadow: 0px 8px 20px rgba(123, 97, 255, 0.6);
 }
 
 .btn-secondary {
   background: transparent;
-  border: 2px solid #ff7eb3;
-  color: #ff7eb3;
+  border: 2px solid #7B61FF;
+  color: #7B61FF;
+  cursor: pointer;
 }
 
 .btn-secondary:hover {
-  background: #ff7eb3;
+  background: #7B61FF;
   color: white;
+  transform: scale(1.05);
+}
+
+/* Section Styling */
+.section {
+  padding: 80px 0;
+}
+
+.section-dark {
+  background: #0A0A0A;
+  color: white;
+}
+
+.section-light {
+  background: #EAEAEA;
+  color: black;
+}
+
+.section-accent {
+  background: #4A3D8C;
+  color: white;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  width: 100px;
+  height: 4px;
+  background: #7B61FF;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  border-radius: 5px;
 }
 
 /* Animations */
@@ -99,55 +113,20 @@ h3 {
   animation: fadeInUp 1s ease-in-out;
 }
 
-/* Section Styling */
-.section {
-  padding: 80px 0;
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0px 0px 8px rgba(123, 97, 255, 0.6);
+  }
+  50% {
+    text-shadow: 0px 0px 20px rgba(123, 97, 255, 1);
+  }
+  100% {
+    text-shadow: 0px 0px 8px rgba(123, 97, 255, 0.6);
+  }
 }
 
-.section-dark {
-  background: #111;
-}
-
-.section-light {
-  background: #1a1a1a;
-}
-
-.section-title {
-  font-size: 3rem;
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  width: 100px;
-  height: 4px;
-  background: #ff7eb3;
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
-  transform: translateX(-50%);
-  border-radius: 5px;
-}
-
-/* Cards */
-.card {
-  background: #222;
-  border-radius: 10px;
-  padding: 20px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
-}
-
-.card img {
-  border-radius: 8px;
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite alternate;
 }
 
 /* Navbar */
@@ -168,13 +147,13 @@ h3 {
 
 /* Footer */
 .footer {
-  background: #111;
+  background: #0A0A0A;
   padding: 40px 0;
   text-align: center;
 }
 
 .footer a {
-  color: #ff7eb3;
+  color: #7B61FF;
   transition: color 0.3s ease-in-out;
 }
 

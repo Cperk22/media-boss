@@ -1,0 +1,25 @@
+/* About Page */
+.about-hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), black),
+      url("/about-bg.jpg") center/cover no-repeat;
+  }
+  
+  .core-values,
+  .team-section {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), black);
+  }
+  
+  .core-values div:hover,
+  .team-section div:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+  }
+  
+  .call-to-action {
+    text-align: center;
+    padding: 50px;
+    background: #7B61FF;
+    color: white;
+    font-size: 1.5rem;
+  }
+  

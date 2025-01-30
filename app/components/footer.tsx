@@ -1,67 +1,71 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
-    return (
-        <motion.footer
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="bg-black text-gray-300 py-12"
-        >
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-                {/* Logo & Description */}
-                <div className="text-center md:text-left">
-                    <h2 className="text-3xl font-bold text-white">MediaBoss</h2>
-                    <p className="mt-2 text-gray-400 max-w-sm">
-                        Delivering innovative media solutions that captivate, inspire, and drive results.
-                    </p>
-                </div>
-                
-                {/* Navigation Links */}
-                <div className="flex space-x-8 mt-6 md:mt-0">
-                    {[
-                        { name: "Home", href: "/" },
-                        { name: "About", href: "/about" },
-                        { name: "Services", href: "/services" },
-                        { name: "Contact", href: "/contact" }
-                    ].map((item, index) => (
-                        <motion.div key={index} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                            <Link href={item.href} className="text-gray-400 hover:text-white text-lg transition">
-                                {item.name}
-                            </Link>
-                        </motion.div>
-                    ))}
-                </div>
-                
-                {/* Social Media Icons */}
-                <div className="flex space-x-6 mt-6 md:mt-0">
-                    {[ 
-                        { icon: Facebook, href: "#" }, 
-                        { icon: Twitter, href: "#" }, 
-                        { icon: Instagram, href: "#" }, 
-                        { icon: Linkedin, href: "#" }
-                    ].map((social, index) => (
-                        <motion.a key={index} href={social.href} target="_blank" rel="noopener noreferrer"
-                            whileHover={{ scale: 1.2 }}
-                            className="text-gray-400 hover:text-white transition"
-                        >
-                            <social.icon size={24} />
-                        </motion.a>
-                    ))}
-                </div>
-            </div>
-            
-            {/* Copyright */}
-            <div className="text-center text-gray-500 text-sm mt-8 border-t border-gray-700 pt-6">
-                © {new Date().getFullYear()} MediaBoss. All Rights Reserved.
-            </div>
-        </motion.footer>
-    );
+  return (
+    <footer className="bg-black text-white py-16 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* Brand Info */}
+        <div>
+          <h2 className="text-3xl font-extrabold tracking-wide">
+            Media<span className="text-purple-500">Boss</span>
+          </h2>
+          <p className="mt-4 text-gray-400">
+            Elevating brands with cutting-edge media solutions. Let’s create something amazing together.
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-lg font-semibold text-purple-400">Quick Links</h3>
+          <ul className="mt-4 space-y-2">
+            {["Home", "About", "Services", "Contact"].map((item, index) => (
+              <li key={index}>
+                <Link href={`/${item.toLowerCase()}`} className="text-gray-300 hover:text-purple-400 transition">
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h3 className="text-lg font-semibold text-purple-400">Contact</h3>
+          <p className="mt-4 text-gray-300">123 Media Street, Suite 400</p>
+          <p className="text-gray-300">Los Angeles, CA 90001</p>
+          <p className="mt-2 text-gray-300">Email: contact@mediaboss.com</p>
+          <p className="text-gray-300">Phone: (123) 456-7890</p>
+        </div>
+
+        {/* Social Media */}
+        <div>
+          <h3 className="text-lg font-semibold text-purple-400">Follow Us</h3>
+          <div className="flex space-x-4 mt-4">
+            <Link href="#" className="social-icon">
+              <FaFacebookF />
+            </Link>
+            <Link href="#" className="social-icon">
+              <FaTwitter />
+            </Link>
+            <Link href="#" className="social-icon">
+              <FaInstagram />
+            </Link>
+            <Link href="#" className="social-icon">
+              <FaLinkedinIn />
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Footer */}
+      <div className="mt-12 text-center border-t border-gray-700 pt-6">
+        <p className="text-gray-500">&copy; {new Date().getFullYear()} MediaBoss. All Rights Reserved.</p>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
