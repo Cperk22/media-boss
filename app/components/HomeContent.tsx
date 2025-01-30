@@ -33,10 +33,27 @@ const HomeContent = () => {
                     <h2 className="text-5xl font-bold text-white">Our Services</h2>
                     <p className="text-gray-400 mt-4 text-lg">Crafted to meet your brand’s unique needs.</p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
-                        {["Video Production", "Brand Strategy", "Web Design"].map((service, index) => (
+                        {[
+                            {
+                                title: "Video Production",
+                                description: "High-quality video content that tells your brand's story.",
+                                image: "/video-production.png"
+                            },
+                            {
+                                title: "Brand Strategy",
+                                description: "Developing a strong brand identity to connect with your audience.",
+                                image: "/brand-strategy.png"
+                            },
+                            {
+                                title: "Web Design",
+                                description: "Creating sleek, responsive websites to enhance your online presence.",
+                                image: "/web-design.png"
+                            }
+                        ].map((service, index) => (
                             <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                                <h3 className="text-2xl font-bold text-white mb-2">{service}</h3>
-                                <p className="text-gray-300">High-quality {service.toLowerCase()} to engage and inspire.</p>
+                                <img src={service.image} alt={service.title} className="w-full h-40 object-cover rounded-lg mb-4" />
+                                <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
+                                <p className="text-gray-300">{service.description}</p>
                             </div>
                         ))}
                     </div>

@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./styles/globals.css";
-
-export const metadata: Metadata = {
-  title: "Media Boss",
-  description: "Innovative media solutions.",
-};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
