@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+/* eslint-disable react/no-unescaped-entities */
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 1 } },
@@ -47,7 +49,6 @@ const ContactContent = () => {
           <p className="text-xl text-gray-300 mt-6 leading-relaxed">
             Fill out the form below or **reach out directly** through our contact details.
           </p>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
             {/* Contact Form */}
             <motion.div
@@ -108,16 +109,22 @@ const ContactContent = () => {
             >
               <h3 className="text-3xl font-bold text-purple-400 mb-6">Our Contact Information</h3>
               <p className="text-gray-300 mb-4">
-                📍 **Address:** 123 Media Boss Blvd, New York, NY 10001
+                <strong>Address:</strong> 123 Media Boss Blvd, New York, NY 10001
               </p>
               <p className="text-gray-300 mb-4">
-                📧 **Email:** <a href="mailto:info@mediaboss.com" className="text-purple-400 hover:underline">info@mediaboss.com</a>
+                <strong>Email:</strong>{" "}
+                <a href="mailto:info@mediaboss.com" className="text-purple-400 hover:underline">
+                  info@mediaboss.com
+                </a>
               </p>
               <p className="text-gray-300 mb-4">
-                📞 **Phone:** <a href="tel:+11234567890" className="text-purple-400 hover:underline">+1 (123) 456-7890</a>
+                <strong>Phone:</strong>{" "}
+                <a href="tel:+11234567890" className="text-purple-400 hover:underline">
+                  +1 (123) 456-7890
+                </a>
               </p>
               <p className="text-gray-300">
-                💼 **Business Hours:** Mon - Fri, 9 AM - 6 PM EST
+                <strong>Business Hours:</strong> Mon - Fri, 9 AM - 6 PM EST
               </p>
             </motion.div>
           </div>
